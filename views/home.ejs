@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <% for (let user of usernames) { %>
+          <% if (user.name !== undefined ) { %>
+            <% if (user.age !== undefined && user.hobbies !== undefined ) { %>
+               <div>
+                <span style="font-weight: bold;"><%= user.name %></span> is of age: <%= user.age %> with hobbies: <%= user.hobbies %>
+                </div>
+            <% } else if( user.age == undefined) { %>
+                <div>
+                    <span style="font-weight: bold;"><%= user.name %></span> is of age: <%= "'age missing'" %> with hobbies: <%= user.hobbies %>
+                    </div>
+                 
+            <% } else if(user.hobbies == undefined  ) { %>
+                           <div>
+                            <span style="font-weight: bold;"><%= user.name %></span> is of age: <%= user.age %> with hobbies: <%= "'hobbies missing'" %>
+                            </div>
+                        <% } %>
+            <% } else { %>
+          <%= "bad data" %>
+          <% }  %>
+          <% } %>
+        </section>
+       </body>
+</html>
